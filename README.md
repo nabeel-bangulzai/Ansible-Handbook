@@ -122,7 +122,7 @@ Tasks:
 |Reusability         |Not reusable         |Partially reusable       |Fully reusable                  |
 |Complexity Supported|Low                  |Medium                   |High                            |
 
-# Bounus
+# Bonus
 - ## Adding windows Host
 - #### Create a user named ansible: In windows host
 
