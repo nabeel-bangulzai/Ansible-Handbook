@@ -18,26 +18,26 @@ It is Scalable, secure and easy to learn because of yaml based syntax to write p
 
 - ### Full installation of ansible on Ubuntu:
 ##### First Create a user for ansible and add that user into sudo group:
-`/ adduser` <br>
-`/ usermod –aG sudo ansible`     &rarr; here ansible is user that I have created.
+`sudo adduser` <br>
+`sudo usermod –aG sudo ansible`     &rarr; here ansible is user that I have created.
 
 #### Update your OS:
-`/ sudo apt update`
+`sudo apt update`
 
 #### Install Prerequisites:
-`/ sudo apt install -y software-properties-common`
+`sudo apt install -y software-properties-common`
 
 #### Add Ansible PPA:
-`/ sudo add-apt-repository --yes --update ppa:ansible/ansible`
+`sudo add-apt-repository --yes --update ppa:ansible/ansible`
 
 #### Install Ansible:
-`/ sudo apt install -y ansible`
+`sudo apt install -y ansible`
 
 #### Verify Installation:
-`/ ansible –version`
+`ansible –version`
 
 #### Configure ansible.cfg file (etc/ansible/ansible.cgf):
-`/ nano /etc/ansible/ansible.cfg`  &rarr; you can check the location of cgf file by (ansible –version)
+`sudo nano /etc/ansible/ansible.cfg`  &rarr; you can check the location of cgf file by (ansible –version)
 
 #### Add below configurations after Default:
 `Inventory = /etc/ansible/hosts`    &rarr; Create a file named hosts and give the location <br>
@@ -46,7 +46,7 @@ It is Scalable, secure and easy to learn because of yaml based syntax to write p
 `/ ansible all –i <inventory location> -m ping` &rarr; if you are using other inventory file
 
 #### Add Hosts:
-`/ nano /etc/ansible/hosts` &rarr; open hosts file and create groups or add host
+`sudo nano /etc/ansible/hosts` &rarr; open hosts file and create groups or add host
 #### Example:
 <pre>[production] &rarr; name of group <br>
 192.168.0.1 <br>
@@ -57,14 +57,14 @@ It is Scalable, secure and easy to learn because of yaml based syntax to write p
 192.168.0.5</pre>
 
 #### Create a SSH key:
-`/ ssh-keygen -t rsa` &rarr; create a SSH key
+`ssh-keygen -t rsa` &rarr; create a SSH key
 
 #### Copy SSH key into host machine:
-`/ ssh-copy-id username@192.168.0.1` &rarr; here username is the user with whom you want to share the key and IP address of host machine.
+`ssh-copy-id username@192.168.0.1` &rarr; here username is the user with whom you want to share the key and IP address of host machine.
 
 
 #### Check the connection:
-`/ ansible production –m ping` &rarr; if the ping is successful everything is good to go.
+`ansible production –m ping` &rarr; if the ping is successful everything is good to go.
 
 - ### Ansible Architecture:
  ![WhatsApp Image 2024-12-06 at 11 21 03 AM](https://github.com/user-attachments/assets/2a6c44f8-d571-4cb5-b428-cf4058a9b8e0)
@@ -91,7 +91,7 @@ A quick and straightforward way to execute single or simple tasks across managed
 #### 2.	Modules
 Modules are pre-built scripts in Ansible that perform specific tasks like installing software, copying files, managing users, and more.
 #### Example: Copy, apt, user, file and many more to check run this command `(ansible –doc)`
-`/ ansible all -m apt –a “name:VLC state:present”`   &rarr;will install VLC on all hosts
+`ansible all -m apt –a “name:VLC state:present”`   &rarr;will install VLC on all hosts
 Note: -b (used to become root), -m (indicates that it is a module), -a (passing arguments)
 #### 3.	Playbooks
 Playbooks are YAML files containing a series of tasks to be executed on managed hosts. They are reusable and designed for complex automation workflows.
