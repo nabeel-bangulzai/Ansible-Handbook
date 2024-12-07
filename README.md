@@ -36,7 +36,7 @@ It is Scalable, secure and easy to learn because of yaml based syntax to write p
 #### Verify Installation:
 `ansible –version`
 
-#### Configure ansible.cfg file (/etc/ansible/ansible.cgf):
+#### Configure ansible.cfg file (/etc/ansible/ansible.cfg):
 `sudo nano /etc/ansible/ansible.cfg`  &rarr; you can check the location of cgf file by (ansible –version)
 
 #### Add below configurations after Default:
